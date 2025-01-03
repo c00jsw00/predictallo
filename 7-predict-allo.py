@@ -146,8 +146,8 @@ def main():
         
         predictor = AllostericSitePredictor(
             model_path="new_features.pkl",
-            labels_path="predictallo/data/labels.pkl",
-            features_path="predictallo/data/2023new_features.pkl"
+            labels_path="/content/predictallo/data/labels.pkl",
+            features_path="/content/predictallo/data/2023new_features.pkl"
         )
         
         pocket_index, probability = predictor.predict(pdb_file)
