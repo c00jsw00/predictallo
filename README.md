@@ -1,4 +1,4 @@
-# predictallo
+# predictallo (PredictAllo is a solution designed to address the challenges of molecular docking for allosteric inhibitors)
 RhoGAP-class-IX-myosins-allosteric
 1. wget http://files.rcsb.org/download/6z2s.pdb
 2. grep ATOM 6z2s.pdb > rec.pdb
