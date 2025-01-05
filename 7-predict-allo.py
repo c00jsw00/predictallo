@@ -89,7 +89,6 @@ class AllostericSitePredictor:
 
     def extract_pocket_features(self, info_file: str) -> np.ndarray:
         try:
-            from utils.pocket_feature import pocket_feature
             features = pocket_feature(info_file)
             
             features = self._convert_to_numpy(features)
@@ -130,11 +129,74 @@ class AllostericSitePredictor:
             max_index = np.argmax(probabilities)
             max_probability = probabilities[max_index]
             
+            # Save the predicted pocket as allosteric_predictsite.pqr
+            pocket_pqr_file = Path(output_dir) / "pockets" / f"pocket{max_index + 1}_vert.pqr"
+            if pocket_pqr_file.exists():
+                # Copy the pocket file to allosteric_predictsite.pqr
+                allosteric_pqr_file = Path(output_dir) / "allosteric_predictsite.pqr"
+                with open(pocket_pqr_file, 'r') as src, open(allosteric_pqr_file, 'w') as dst:
+                    dst.write(src.read())
+                self.logger.info(f"Saved predicted pocket as {allosteric_pqr_file}")
+                
+                # Calculate the centroid of the pocket
+                self.calculate_centroid(allosteric_pqr_file, output_dir)
+            else:
+                self.logger.error(f"Pocket file {pocket_pqr_file} not found")
+            
             return max_index + 1, max_probability
             
         except Exception as e:
             self.logger.error(f"Prediction failed: {str(e)}")
             raise
+
+    def calculate_centroid(self, pqr_file: Path, output_dir: str):
+        """Calculate the centroid of the pocket and save it to a file."""
+        try:
+            coords = []
+            with open(pqr_file, 'r') as f:
+                for line in f:
+                    if line.startswith("ATOM"):
+                        # Extract x, y, z coordinates
+                        x = float(line[30:38].strip())
+                        y = float(line[38:46].strip())
+                        z = float(line[46:54].strip())
+                        coords.append((x, y, z))
+            
+            if coords:
+                # Calculate the centroid
+                centroid = np.mean(coords, axis=0)
+                self.logger.info(f"Calculated centroid: {centroid}")
+                
+                # Save the centroid to a file
+                centroid_file = Path(output_dir) / "allosteric_predictsite.center"
+                with open(centroid_file, 'w') as f:
+                    f.write(f"{centroid[0]:.3f} {centroid[1]:.3f} {centroid[2]:.3f}\n")
+                self.logger.info(f"Saved centroid to {centroid_file}")
+            else:
+                self.logger.error("No ATOM lines found in the PQR file")
+                
+        except Exception as e:
+            self.logger.error(f"Error calculating centroid: {str(e)}")
+            raise
+
+def pocket_feature(file_dir):
+    pocket = open(file_dir, "r").readlines()
+    pocket_num = len(pocket) // 21
+
+    # collection of features of all pockets
+    features = []
+
+    for index in range(pocket_num):
+        # feature for current pocket
+        cur_feature = []
+        cur = pocket[index * 21: (index + 1) * 21]
+        for line in cur[1:-1]:
+            cur_feature.append(float(line.split("\t")[2][:-1]))
+
+        assert len(cur_feature) == 19
+        features.append(cur_feature)
+
+    return features
 
 def main():
     try:
@@ -145,9 +207,9 @@ def main():
         pdb_file = sys.argv[1]
         
         predictor = AllostericSitePredictor(
-            model_path="new_features.pkl",
-            labels_path="/content/predictallo/data/labels.pkl",
-            features_path="/content/predictallo/data/2023new_features.pkl"
+            model_path="data/new_features.pkl",
+            labels_path="data/labels.pkl",
+            features_path="data/2023new_features.pkl"
         )
         
         pocket_index, probability = predictor.predict(pdb_file)
