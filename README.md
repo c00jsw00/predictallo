@@ -1,6 +1,8 @@
 # predictallo (PredictAllo is a solution designed to address the challenges of molecular docking for allosteric inhibitors)
 RhoGAP-class-IX-myosins-allosteric
 
+You can use the following command, conda env create -f environment.yml -n predictallo, to install the predictallo environment on a Linux machine.
+
 You can execute example.sh to replace the following commands
 
 1. wget http://files.rcsb.org/download/6z2s.pdb
