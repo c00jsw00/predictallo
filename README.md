@@ -13,5 +13,6 @@ RhoGAP-class-IX-myosins-allosteric
 11. python top5.py docked.sdf
 
 (The mesh part represents a predicted allosteric binding site (PABS). Our predicted PABS is capable of encompassing the allosteric inhibitor Q5Q. Additionally, another compound displayed in molecular form is ADP metavanadate)
+
 <img src="https://github.com/user-attachments/assets/7d8ac510-3480-4e8e-aade-82adb0f5797e" alt="allo" style="width: 300px; height: auto;">
 
