@@ -6,3 +6,5 @@ RhoGAP-class-IX-myosins-allosteric
 3. wget https://github.com/gnina/gnina/releases/download/v1.1/gnina
 4. chmod +x gnina
 5. ./gnina --help
+6.  python 7-predict-allo.py rec.pdb
+![allo](https://github.com/user-attachments/assets/7d8ac510-3480-4e8e-aade-82adb0f5797e)
