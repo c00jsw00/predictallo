@@ -14,5 +14,6 @@ RhoGAP-class-IX-myosins-allosteric
 
 (The mesh part represents a predicted allosteric binding site (PABS). Our predicted PABS is capable of encompassing the allosteric inhibitor Q5Q. Additionally, another compound displayed in molecular form is ADP metavanadate)
 
-<img src="https://github.com/user-attachments/assets/7d8ac510-3480-4e8e-aade-82adb0f5797e" alt="allo" style="width: 300px; height: auto;">
-<img src="https://github.com/user-attachments/assets/40d6cd0b-24d4-40f8-ab5d-b3ababbeb58c" alt="allo" style="width: 300px; height: auto;">
+| ![allo](https://github.com/user-attachments/assets/7d8ac510-3480-4e8e-aade-82adb0f5797e) | ![allo](https://github.com/user-attachments/assets/40d6cd0b-24d4-40f8-ab5d-b3ababbeb58c) |
+|:---:|:---:|
+| (A) | (B) |
