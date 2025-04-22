@@ -1,0 +1,86 @@
+HETATM    1  V   VOX A   1      -3.864 -46.945 -59.570  1.00  0.00          V
+HETATM    2  V   VOX A   1      -3.925 -47.194 -59.421  1.00  0.00          V
+HETATM    3  V   VOX A   1      -3.559 -44.753 -59.555  1.00  0.00          V
+HETATM    4  V   VOX A   1      -7.352 -38.083 -44.941  1.00  0.00          V
+HETATM    5  V   VOX A   1      -7.115 -38.356 -44.597  1.00  0.00          V
+HETATM    6  V   VOX A   1     -15.173 -47.507 -58.585  1.00  0.00          V
+HETATM    7  V   VOX A   1      -4.983 -43.407 -45.542  1.00  0.00          V
+HETATM    8  V   VOX A   1     -26.743 -41.999 -46.410  1.00  0.00          V
+HETATM    9  V   VOX A   1     -26.166 -45.135 -43.144  1.00  0.00          V
+HETATM   10  V   VOX A   1     -10.537 -47.748 -51.554  1.00  0.00          V
+HETATM   11  V   VOX A   1     -11.261 -47.387 -48.986  1.00  0.00          V
+HETATM   12  V   VOX A   1      -7.591 -37.985 -46.110  1.00  0.00          V
+HETATM   13  V   VOX A   1     -10.468 -45.338 -38.693  1.00  0.00          V
+HETATM   14  V   VOX A   1     -10.628 -41.360 -36.927  1.00  0.00          V
+HETATM   15  V   VOX A   1     -26.751 -41.627 -44.419  1.00  0.00          V
+HETATM   16  V   VOX A   1     -24.796 -38.087 -47.302  1.00  0.00          V
+HETATM   17  V   VOX A   1     -25.592 -44.704 -45.388  1.00  0.00          V
+HETATM   18  V   VOX A   1     -25.749 -45.364 -43.011  1.00  0.00          V
+HETATM   19  V   VOX A   1     -24.052 -38.118 -44.823  1.00  0.00          V
+HETATM   20  V   VOX A   1     -26.813 -41.088 -44.214  1.00  0.00          V
+HETATM   21  V   VOX A   1     -26.855 -40.599 -43.796  1.00  0.00          V
+HETATM   22  V   VOX A   1     -24.291 -38.188 -44.914  1.00  0.00          V
+HETATM   23  V   VOX A   1     -24.939 -38.263 -46.909  1.00  0.00          V
+HETATM   24  V   VOX A   1     -26.379 -44.121 -42.587  1.00  0.00          V
+HETATM   25  V   VOX A   1     -26.010 -43.240 -40.501  1.00  0.00          V
+HETATM   26  V   VOX A   1     -26.577 -42.241 -42.291  1.00  0.00          V
+HETATM   27  V   VOX A   1      -8.629 -40.645 -37.482  1.00  0.00          V
+HETATM   28  V   VOX A   1      -9.215 -41.021 -37.213  1.00  0.00          V
+HETATM   29  V   VOX A   1     -15.217 -48.486 -58.598  1.00  0.00          V
+HETATM   30  V   VOX A   1     -15.383 -48.427 -57.633  1.00  0.00          V
+CONECT   16   12    3
+CONECT    8   16   21
+CONECT    6   16    3
+CONECT    6    8   16
+CONECT   19   16   12
+CONECT   25   19   21
+CONECT   25   19   14
+CONECT   25   13   14
+CONECT   25   13   18
+CONECT   29    6    8
+CONECT   29   17    8
+CONECT   29   18   30
+CONECT   22   19   21
+CONECT   22   19   16
+CONECT   27   19   14
+CONECT   10    2   13
+CONECT   10   29   30
+CONECT   10   29    2
+CONECT    7    2   13
+CONECT    7   27   13
+CONECT   20    8   21
+CONECT   20   15    8
+CONECT   24   15    8
+CONECT   24   20   21
+CONECT   24   20   15
+CONECT    1   29    2
+CONECT    1    7    3
+CONECT    1    7    2
+CONECT    1    6    3
+CONECT    1   29    6
+CONECT   23   16   21
+CONECT   23   22   21
+CONECT   23   22   16
+CONECT   28   13   14
+CONECT   28   27   14
+CONECT   28   27   13
+CONECT    4   19   12
+CONECT    4   27   19
+CONECT    4   12    3
+CONECT   11   13   18
+CONECT   11   10   13
+CONECT   11   18   30
+CONECT   11   10   30
+CONECT    9   25   18
+CONECT    9   24   25
+CONECT    9   24    8
+CONECT    9   29   18
+CONECT    9   29   17
+CONECT    9   17    8
+CONECT   26   25   21
+CONECT   26   24   21
+CONECT   26   24   25
+CONECT    5    4   27
+CONECT    5    7   27
+CONECT    5    7    3
+CONECT    5    4    3
